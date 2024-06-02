@@ -1,3 +1,11 @@
+// TrackJS Initialization
+if (window.TrackJS) {
+  TrackJS.install({ 
+    token: "84637b89ec8348d086612510b9f95bf"
+    // for more configuration options, see https://docs.trackjs.com
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   let form = document.querySelector('form');
   form.addEventListener('submit', e => {
@@ -71,23 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     throw new Error('Global error triggered');
   });
 
-  document.querySelector('#simulate-error-btn').addEventListener('click', simulateError);
-  document.querySelector('#throw-custom-error-btn').addEventListener('click', () => {
-    throw new Error('This is a custom error message');
-  });
-
   window.onerror = function (msg, url, lineNo, columnNo, error) {
     console.log('Global error caught: ' + msg);
     return false;
   };
-
-  function simulateError() {
-    try {
-      nonExistentFunction();
-    } catch (error) {
-      console.error('Caught an error:', error);
-    } finally {
-      console.log('This will run regardless of the error');
-    }
-  }
 });
