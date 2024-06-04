@@ -6,4 +6,4 @@ This repository contains the code for Lab 9.
 [View the live site here](https://ddesantiag0.github.io/Lab9_Starter/)
 
 ## Screenshots
-![TrackJS Error Log](screenshot.png)
+[TrackJS Error Log](screenshot.png)
